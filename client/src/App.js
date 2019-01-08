@@ -14,17 +14,18 @@ class App extends Component {
       .catch(err => console.error(err));
   }
   render() {
-    console.log(this.state);
     const { posts } = this.state;
     return (
       <div className="App">
         <h1>Welcome to this ugly beast</h1>
-        {posts.map((post, index) => (
-          <div className="post" key={index}>
-            <h2>{post.title}</h2>
-            <p>{post.contents}</p>
-          </div>
-        ))}
+        <div className="posts-container">
+          {posts.map((post, index) => (
+            <div className="post" key={index}>
+              <h2>{post.contents}</h2>
+              <p>{post.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
