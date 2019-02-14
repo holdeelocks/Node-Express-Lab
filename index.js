@@ -71,7 +71,7 @@ server.put("/api/posts/:id", (req, res) => {
   if (!updated.title || !updated.contents) {
     return res
       .status(400)
-      .json({ errorMessage: "Please provide title and contents for the post." });
+      .json({ errorMessage: "Please provide both title and contents for the post." });
   }
 
   db.findById(id)
